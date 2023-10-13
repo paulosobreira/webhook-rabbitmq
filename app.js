@@ -30,15 +30,18 @@ async function publisher(mensagem) {
       }    
 }
 
-app.use('/', (req, res, next) => {
+// GET method route
+app.get('/', function (req, res) {
   res.send('Webhook RabbitMQ');
-})
+});
 
-app.use('/rabbitmq', (req, res, next) => {
-    publisher(JSON.stringify(req.body));
-    console.log(JSON.stringify(req.body));
-    res.send('');
-})
+// POST method route
+app.post('/rabbitmq', function (req, res) {
+  publisher(JSON.stringify(req.body));
+  console.log(JSON.stringify(req.body));
+  res.send('JSON recebido');
+});
+
 
 app.listen(process.env.APP_PORT, () => {
     console.log(`Running at ${process.env.APP_PORT}`)
