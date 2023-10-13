@@ -1,4 +1,4 @@
-# Webhook rabbitmq
+# Webhook RabbitMQ
 Serviço responsável por receber dados e enviar ao rabbitmq
 
 ## EndPoints
