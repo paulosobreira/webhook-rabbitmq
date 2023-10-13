@@ -31,3 +31,8 @@ QUEUE_PWD={password}
 npm install
 node app.js
 ```
+Construir imagem airflow com dependencias:
+```
+docker build . --tag sowbreira/webhook-rabbitmq
+docker push sowbreira/webhook-rabbitmq
+```

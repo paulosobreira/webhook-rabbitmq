@@ -30,6 +30,10 @@ async function publisher(mensagem) {
       }    
 }
 
+app.use('/', (req, res, next) => {
+  res.send('Webhook RabbitMQ');
+})
+
 app.use('/rabbitmq', (req, res, next) => {
     publisher(JSON.stringify(req.body));
     console.log(JSON.stringify(req.body));
